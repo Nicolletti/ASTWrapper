@@ -1,0 +1,280 @@
+example.lean:
+def factorial : Nat → Nat
+| 0 => 1
+| n + 1 => (n + 1) * factorial n
+
+example.v:
+Fixpoint factorial (n : nat) : nat :=
+  match n with
+  | O => 1
+  | S p => (S p) * factorial p
+  end.
+
+output.json:
+[
+{
+  "success": true,
+  "fileName": "C:\\Users\\João\\Downloads\\examples\\example.lean",
+  "language": "Lean",
+  "ast": {
+    "nodeType": "Other",
+    "name": "C:\\Users\\João\\Downloads\\examples\\example.lean",
+    "language": "Lean",
+    "children": [
+      {
+        "nodeType": "Other",
+        "name": "",
+        "language": "Lean",
+        "children": [],
+        "metadata": {
+          "kind": "ModuleHeader",
+          "line": 1
+        }
+      },
+      {
+        "nodeType": "Other",
+        "name": "",
+        "language": "Lean",
+        "children": [],
+        "metadata": {
+          "kind": "Imports"
+        }
+      },
+      {
+        "nodeType": "Other",
+        "name": "",
+        "language": "Lean",
+        "children": [],
+        "metadata": {
+          "kind": "Opens"
+        }
+      },
+      {
+        "nodeType": "Other",
+        "name": "",
+        "language": "Lean",
+        "children": [],
+        "metadata": {
+          "kind": "Comments",
+          "total": 0
+        }
+      },
+      {
+        "nodeType": "Other",
+        "name": "",
+        "language": "Lean",
+        "children": [],
+        "metadata": {
+          "kind": "Scopes"
+        }
+      },
+      {
+        "nodeType": "Other",
+        "name": "",
+        "language": "Lean",
+        "children": [],
+        "metadata": {
+          "kind": "Variables"
+        }
+      },
+      {
+        "nodeType": "Other",
+        "name": "",
+        "language": "Lean",
+        "children": [
+          {
+            "nodeType": "Definition",
+            "name": "factorial",
+            "language": "Lean",
+            "children": [
+              {
+                "nodeType": "Other",
+                "name": "",
+                "language": "Lean",
+                "children": [
+                  {
+                    "nodeType": "Other",
+                    "name": "n + 1",
+                    "language": "Lean",
+                    "children": [],
+                    "metadata": {
+                      "kind": "explicit",
+                      "value": "n + 1"
+                    }
+                  }
+                ],
+                "metadata": {
+                  "kind": "Signature",
+                  "children": [
+                    {
+                      "kind": "explicit",
+                      "value": "n + 1"
+                    }
+                  ]
+                }
+              },
+              {
+                "nodeType": "Other",
+                "name": "Nat → Nat\n| 0 => 1\n| n + 1 => (n + 1) * factorial n",
+                "language": "Lean",
+                "children": [],
+                "metadata": {
+                  "kind": "ReturnType",
+                  "value": "Nat → Nat\n| 0 => 1\n| n + 1 => (n + 1) * factorial n"
+                }
+              }
+            ],
+            "metadata": {
+              "kind": "Definition",
+              "line": 1,
+              "value": "factorial",
+              "end_line": 4,
+              "keyword": "def",
+              "return_type": "Nat → Nat\n| 0 => 1\n| n + 1 => (n + 1) * factorial n",
+              "children": [
+                {
+                  "kind": "Signature",
+                  "children": [
+                    {
+                      "kind": "explicit",
+                      "value": "n + 1"
+                    }
+                  ]
+                },
+                {
+                  "kind": "ReturnType",
+                  "value": "Nat → Nat\n| 0 => 1\n| n + 1 => (n + 1) * factorial n"
+                }
+              ]
+            }
+          }
+        ],
+        "metadata": {
+          "kind": "Declarations",
+          "children": [
+            {
+              "kind": "Definition",
+              "line": 1,
+              "value": "factorial",
+              "end_line": 4,
+              "keyword": "def",
+              "return_type": "Nat → Nat\n| 0 => 1\n| n + 1 => (n + 1) * factorial n",
+              "children": [
+                {
+                  "kind": "Signature",
+                  "children": [
+                    {
+                      "kind": "explicit",
+                      "value": "n + 1"
+                    }
+                  ]
+                },
+                {
+                  "kind": "ReturnType",
+                  "value": "Nat → Nat\n| 0 => 1\n| n + 1 => (n + 1) * factorial n"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "metadata": {
+      "kind": "FileNode",
+      "value": "C:\\Users\\João\\Downloads\\examples\\example.lean",
+      "num_lines": 4,
+      "children": [
+        {
+          "kind": "ModuleHeader",
+          "line": 1
+        },
+        {
+          "kind": "Imports"
+        },
+        {
+          "kind": "Opens"
+        },
+        {
+          "kind": "Comments",
+          "total": 0
+        },
+        {
+          "kind": "Scopes"
+        },
+        {
+          "kind": "Variables"
+        },
+        {
+          "kind": "Declarations",
+          "children": [
+            {
+              "kind": "Definition",
+              "line": 1,
+              "value": "factorial",
+              "end_line": 4,
+              "keyword": "def",
+              "return_type": "Nat → Nat\n| 0 => 1\n| n + 1 => (n + 1) * factorial n",
+              "children": [
+                {
+                  "kind": "Signature",
+                  "children": [
+                    {
+                      "kind": "explicit",
+                      "value": "n + 1"
+                    }
+                  ]
+                },
+                {
+                  "kind": "ReturnType",
+                  "value": "Nat → Nat\n| 0 => 1\n| n + 1 => (n + 1) * factorial n"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "error": null,
+  "processingTime": 212
+},
+{
+  "success": true,
+  "fileName": "C:\\Users\\João\\Downloads\\examples\\example.v",
+  "language": "Rocq",
+  "ast": {
+    "nodeType": "Other",
+    "name": "example.v",
+    "language": "Rocq",
+    "children": [
+      {
+        "nodeType": "Fixpoint",
+        "name": "Fixpoint factorial (n : nat) : nat :=\r\n  match n with\r\n  | O => 1\r\n  | S p => (S",
+        "language": "Rocq",
+        "children": [
+          {
+            "nodeType": "Other",
+            "name": "O",
+            "language": "Rocq",
+            "children": [],
+            "metadata": null
+          },
+          {
+            "nodeType": "Other",
+            "name": "S",
+            "language": "Rocq",
+            "children": [],
+            "metadata": null
+          }
+        ],
+        "metadata": {}
+      }
+    ],
+    "metadata": {
+      "source": "C:\\Users\\João\\Downloads\\examples\\example.v"
+    }
+  },
+  "error": null,
+  "processingTime": 3
+}
+]
