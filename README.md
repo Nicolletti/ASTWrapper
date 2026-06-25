@@ -2,12 +2,10 @@
 
 # Formal Verification AST Wrapper
 
-Simple wrapper to parse Lean (.lean) and Coq/Rocq (.v) files and produce a unified JSON AST output.
 Simple wrapper to parse Lean (.lean), Coq/Rocq (.v) and Agda (.agda) files and produce a unified JSON AST output.
 
 ## Overview
 
-This program scans a repository folder, finds `.lean` and `.v` files, runs the appropriate parser for each file, and writes a single `output.json` with results. Each result contains a processing status, the file path, detected language, a unified AST node tree, an error (if any), and the processing time in milliseconds.
 This program scans a repository folder, finds `.lean`, `.v` and `.agda` files, runs the appropriate parser for each file, and writes a single `output.json` with results. Each result contains a processing status, the file path, detected language, a unified AST node tree, optional raw AST JSON (for Agda), an error (if any), and the processing time in milliseconds.
 
 Two ways to use this project are provided in the repository:
@@ -17,11 +15,14 @@ Two ways to use this project are provided in the repository:
 ## Requirements
 
 - .NET 10 runtime (or SDK to build)
-- For Rocq (.v) files: WSL with Coq serapi installed if you want full-serapi mode (the project includes a fast local heuristic mode by default)
-- For Lean (.lean) files: no extra runtime required (parsing uses local code in `LeanAST.cs`)
  - For Rocq (.v) files: WSL with Coq serapi installed if you want full-serapi mode (the project includes a fast local heuristic mode by default).
  - For Lean (.lean) files: no extra runtime required (parsing uses local code in `LeanAST.cs`).
  - For Agda (.agda) files: an `agda` executable must be available. You can point the wrapper to a custom wrapper or executable using the AGDA_EXECUTABLE environment variable. The project includes a small helper `AgdaAstWrapper.cs` which can be compiled and used as the AGDA executable if desired.
+
+For Agda support you will need:
+ - Haskell (GHC) installed
+ - Agda installed (typically via Cabal: `cabal install Agda`)
+ - Or alternatively, a pre-compiled Agda executable available on PATH or via AGDA_EXECUTABLE env var
 
 Note: The executable may still rely on external tools if you enable full SerAPI parsing. Include instructions when sharing the executable.
 
@@ -29,7 +30,6 @@ Note: The executable may still rely on external tools if you enable full SerAPI 
 
 - `Program.cs` — entry point. Accepts a repository path and runs the orchestrator.
 - `Orchestrator.cs` — finds files, runs parsers in parallel, writes `output.json` incrementally.
-- `ParserExecutor.cs` — chooses the parser for each file and converts parser output to `UnifiedASTNode`.
  - `ParserExecutor.cs` — chooses the parser for each file and converts parser output to `UnifiedASTNode` (invokes `agda --print-ast-json` for .agda files and captures the JSON AST).
 - `RocqAST.cs` — Coq/Rocq parser logic. By default uses a fast local heuristic parser. Can be adapted to call SerAPI.
 - `LeanAST.cs` — Lean parser and utilities.
