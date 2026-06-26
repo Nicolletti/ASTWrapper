@@ -11,7 +11,7 @@
 
 ## Quick start — run the executable
 
-1. Unzip or put the published folder on the target machine.
+1. Unzip one of the executables
 2. Open a terminal and run:
 
 ```powershell
